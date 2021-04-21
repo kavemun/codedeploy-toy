@@ -1,0 +1,14 @@
+version: 0.0
+os: linux
+files:
+  - source: /toy-robot
+    destination: /opt
+hooks:
+  BeforeInstall:
+    - location: scripts/beforeinstall.sh
+  ApplicationStop:
+    - location: scripts/applicationstop.sh
+  ApplicationStart:
+    - location: scripts/applicationstart.sh
+  ValidateService:
+    - location: scripts/validateservice.sh

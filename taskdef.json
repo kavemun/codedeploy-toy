@@ -1,0 +1,24 @@
+{
+    "executionRoleArn": "arn:aws:iam::009791141303:role/ecsTaskExecutionRole",
+    "containerDefinitions": [
+        {
+            "name": "toy-robot",
+            "image": "009791141303.dkr.ecr.us-east-1.amazonaws.com/toy-robot-ecr:latest",
+            "essential": true,
+            "portMappings": [
+                {
+                    "hostPort": 80,
+                    "protocol": "tcp",
+                    "containerPort": 80
+                }
+            ]
+        }
+    ],
+    "requiresCompatibilities": [
+        "FARGATE"
+    ],
+    "networkMode": "awsvpc",
+    "cpu": "256",
+    "memory": "512",
+    "family": "toy-robot"
+}
